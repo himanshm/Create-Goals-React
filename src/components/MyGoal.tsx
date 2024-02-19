@@ -1,6 +1,7 @@
 import { FC } from 'react';
+import { CareerGoal } from '../models/my-goals';
 
-const MyGoal: FC<{ title: string; description: string }> = (props) => {
+const MyGoal: FC<CareerGoal> = function (props) {
   return (
     <article>
       <div>

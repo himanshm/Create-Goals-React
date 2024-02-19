@@ -78,6 +78,7 @@ form button {
 form button:hover {
   background-color: #f9e175;
 }
+*/
 
 ul {
   list-style: none;
@@ -85,9 +86,8 @@ ul {
   padding: 0;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* TODO */
 }
-
 li {
   background-color: #475357;
   padding: 1rem;
@@ -126,6 +126,7 @@ li button:hover {
   color: #f9a73b;
 }
 
+/*
 .fallback {
   text-align: center;
   color: #acd1ce;
