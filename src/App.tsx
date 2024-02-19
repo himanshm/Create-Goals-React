@@ -8,7 +8,7 @@ import { generateGUID } from './utils/generateGUID.ts';
 export type CareerGoal = {
   title: string;
   description: string;
-  id?: string;
+  id: string;
 };
 
 export default function App() {
@@ -24,6 +24,12 @@ export default function App() {
       return [...prevGoals, newGoal];
     });
   };
+
+  const deleteGoalHandler = function (goalId: string) {
+    setGoals((prevGoals) => {
+      return prevGoals.filter((goal) => goal.id !== goalId);
+    });
+  };
   return (
     <main>
       <Header image={{ src: goalsImg, alt: 'A list of goals' }}>
@@ -31,7 +37,10 @@ export default function App() {
       </Header>
 
       <button onClick={addGoalHandler}>Add Goal</button>
-      <MyGoalList goals={goals} />
+      <MyGoalList
+        goals={goals}
+        onDeleteGoal={deleteGoalHandler}
+      />
     </main>
   );
 }

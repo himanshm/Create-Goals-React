@@ -1,14 +1,18 @@
-import { FC } from 'react';
 import { CareerGoal } from '../App.tsx';
 
-const MyGoal: FC<CareerGoal> = function (props) {
+type MyGoalProps = {
+  goal: CareerGoal;
+  onDelete: (id: string) => void;
+};
+
+const MyGoal = function ({ goal, onDelete }: MyGoalProps) {
   return (
     <article>
       <div>
-        <h2>{props.title}</h2>
-        <p>{props.description}</p>
+        <h2>{goal.title}</h2>
+        <p>{goal.description}</p>
       </div>
-      <button>Delete</button>
+      <button onClick={() => onDelete(goal.id)}>Delete</button>
     </article>
   );
 };

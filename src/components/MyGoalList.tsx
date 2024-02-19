@@ -3,16 +3,17 @@ import MyGoal from './MyGoal.tsx';
 
 type goalsListProps = {
   goals: CareerGoal[];
+  onDeleteGoal: (id: string) => void;
 };
 
-const MyGoalList = function ({ goals }: goalsListProps) {
+const MyGoalList = function ({ goals, onDeleteGoal }: goalsListProps) {
   return (
     <ul>
       {goals.map((goal) => (
         <li key={goal.id}>
           <MyGoal
-            title={goal.title}
-            description={goal.description}
+            onDelete={onDeleteGoal}
+            goal={goal}
           />
         </li>
       ))}
