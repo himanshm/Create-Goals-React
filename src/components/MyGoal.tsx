@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CareerGoal } from '../models/my-goals';
+import { CareerGoal } from '../App.tsx';
 
 const MyGoal: FC<CareerGoal> = function (props) {
   return (

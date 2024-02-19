@@ -4,7 +4,12 @@ import Header from './components/Header.tsx';
 import MyGoalList from './components/MyGoalList.tsx';
 import goalsImg from './assets/goals.jpg';
 import { generateGUID } from './utils/generateGUID.ts';
-import { CareerGoal } from './models/my-goals.ts';
+
+export type CareerGoal = {
+  title: string;
+  description: string;
+  id?: string;
+};
 
 export default function App() {
   const [goals, setGoals] = useState<CareerGoal[]>([]);

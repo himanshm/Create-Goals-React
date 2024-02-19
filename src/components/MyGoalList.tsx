@@ -1,4 +1,4 @@
-import { CareerGoal } from '../models/my-goals';
+import { CareerGoal } from '../App.tsx';
 import MyGoal from './MyGoal.tsx';
 
 type goalsListProps = {
