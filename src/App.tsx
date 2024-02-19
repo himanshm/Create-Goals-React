@@ -15,11 +15,11 @@ export type CareerGoal = {
 export default function App() {
   const [goals, setGoals] = useState<CareerGoal[]>([]);
 
-  const addGoalHandler = function () {
+  const addGoalHandler = function (goal: string, summary: string) {
     const newGoal: CareerGoal = {
       id: generateGUID(),
-      title: 'Learn React with TypeScript',
-      description: 'Learn it in depth!',
+      title: goal,
+      description: summary,
     };
     setGoals((prevGoals) => {
       return [...prevGoals, newGoal];
@@ -37,7 +37,7 @@ export default function App() {
         <h1>My Goals</h1>
       </Header>
 
-      <NewGoal />
+      <NewGoal onAddGoal={addGoalHandler} />
       <MyGoalList
         goals={goals}
         onDeleteGoal={deleteGoalHandler}
