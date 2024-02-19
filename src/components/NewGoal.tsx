@@ -14,6 +14,7 @@ const NewGoal = function ({ onAddGoal }: NewGoalProps) {
     const enteredGoal = goal.current!.value;
     const enteredSummary = summary.current!.value;
 
+    event.currentTarget.reset(); // Resets the form after submission
     onAddGoal(enteredGoal, enteredSummary);
   }
   return (
