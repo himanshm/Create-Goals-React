@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Header from './components/Header.tsx';
 import MyGoalList from './components/MyGoalList.tsx';
+import NewGoal from './components/NewGoal.tsx';
 import goalsImg from './assets/goals.jpg';
 import { generateGUID } from './utils/generateGUID.ts';
 
@@ -36,7 +37,7 @@ export default function App() {
         <h1>My Goals</h1>
       </Header>
 
-      <button onClick={addGoalHandler}>Add Goal</button>
+      <NewGoal />
       <MyGoalList
         goals={goals}
         onDeleteGoal={deleteGoalHandler}
